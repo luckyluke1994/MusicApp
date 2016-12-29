@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/music1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:orientation="horizontal"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/thumb_image"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:src="@drawable/model_female" />
+
+    <TextView
+        android:id="@+id/title_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/thumb_image"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:lines="1"
+        android:text="Same Old Love - Selena Gomez"
+        android:textColor="@color/title_song_color"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/artist_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_below="@+id/title_song"
+        android:layout_toRightOf="@+id/thumb_image"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:text="Selena Gomez"
+        android:textColor="@color/title_song_color"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/length_of_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:layout_below="@+id/title_song"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="7dp"
+        android:textColor="@color/title_song_color"
+        android:textSize="12sp"
+        android:text="4:24"/>
+</RelativeLayout>

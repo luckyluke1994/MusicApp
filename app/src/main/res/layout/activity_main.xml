@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.framgiamaidaidien.musicapp.MainActivity">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/one_direction_blur"
+        android:layout_above="@+id/list_song_layout"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/music_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Music Title"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/music_artist_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/music_title"
+        android:layout_centerHorizontal="true"
+        android:text="Singer Name - Artist Here"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"/>
+
+    <RelativeLayout
+        android:id="@+id/song_player_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/music_artist_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <com.example.framgiamaidaidien.musicapp.ui.CircleProgressFAB
+            android:id="@+id/song_playing_fab"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/one_direction"/>
+
+        <TextView
+            android:id="@+id/song_time_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="01:40"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"/>
+
+        <ImageView
+            android:id="@+id/shuffle"
+            android:layout_width="@dimen/icon_options"
+            android:layout_height="@dimen/icon_options"
+            android:layout_below="@+id/song_time_textview"
+            android:layout_toLeftOf="@+id/like"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/shuffle_unselected"/>
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="@dimen/icon_options"
+            android:layout_height="@dimen/icon_options"
+            android:layout_below="@+id/song_time_textview"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/like_unselected"/>
+
+        <ImageView
+            android:id="@+id/replay"
+            android:layout_width="@dimen/icon_options"
+            android:layout_height="@dimen/icon_options"
+            android:layout_below="@+id/song_time_textview"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/like"
+            android:src="@drawable/replay_unselected"/>
+
+        <ImageView
+            android:id="@+id/play_next_btn"
+            android:layout_width="@dimen/icon_options"
+            android:layout_height="@dimen/icon_options"
+            android:src="@android:drawable/ic_media_next"
+            android:layout_toRightOf="@+id/song_playing_fab"
+            android:layout_margin="20dp"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/play_previous_btn"
+            android:layout_width="@dimen/icon_options"
+            android:layout_height="@dimen/icon_options"
+            android:src="@android:drawable/ic_media_previous"
+            android:layout_toLeftOf="@+id/song_playing_fab"
+            android:layout_margin="20dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/list_song_layout"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/list_song_layout_color">
+
+        <TextView
+            android:id="@+id/list_song_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:text="List play song"/>
+        
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_below="@+id/list_song_title"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/line_color"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_song"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/line"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/play_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/image_view"
+        android:layout_marginBottom="-30dp"
+        android:layout_marginRight="20dp"
+        android:src="@android:drawable/ic_media_play"/>
+
+</RelativeLayout>

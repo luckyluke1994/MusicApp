@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#546b76</color>
+    <color name="colorPrimaryDark">#3e5560</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="red">#fc1606</color>
+    <color name="list_song_layout_color">#262626</color>
+    <color name="line_color">#80fafafa</color>
+    <color name="title_song_color">#ddd</color>
+    <color name="ripple_highlight">#ba68c8</color>
+    <color name="test">#FFFFC107</color>
+    <color name="test2">#FFFF5722</color>
+</resources>
